@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './sign-in.style.scss';
-
+import InputFeild from '../input-feild/input-feild.component';
 class SignIn extends Component{
     constructor(){
         super();
@@ -26,15 +26,13 @@ class SignIn extends Component{
     }
     render(){
         return(
-            <div className="">
-                <h2>Sign Up Form</h2>
-                <span>please sign in</span>
+            <div className="sign-in">
+                <h2>I already have an account</h2>
+                <span>Sign in with email and password</span>
                 <form onSubmit={this.handelSubmit}>
-                    <input name="email" type="email" value={this.state.email} onChange={this.handelChange} />
-                    <label>Email</label>
-                    <input name="password" type="password" value={this.state.password} onChange={this.handelChange} />
-                    <label>password</label>
-                    <input type="submit" name="submit" />
+                    <InputFeild name="email" type="email" value={this.state.email} onChange={this.handelChange} lable="email" required/>
+                    <InputFeild name="password" type="password" value={this.state.password} onChange={this.handelChange} lable="password" required />
+                    <input type="submit" name="submit" value="submit form" />
                 </form>
             </div>
         )
